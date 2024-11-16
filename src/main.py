@@ -4,6 +4,10 @@ from src.router import router as router_crypto
 
 app = FastAPI()
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hello, Vercel!"}
+
 app.include_router(router_crypto)
 
 origins = [
